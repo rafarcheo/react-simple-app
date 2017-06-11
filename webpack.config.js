@@ -45,5 +45,10 @@ module.exports = {
             disable: false,
             allChunks: true
         })
-    ]
+    ],
+    externals: {
+        'react/addons': true,
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': true
+    }
 }

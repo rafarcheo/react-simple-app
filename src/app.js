@@ -1,12 +1,25 @@
 import React from 'react';
 
-const App = () => {
-	return (
-	<div>	
-		<h2 className="title">simple app</h2>
-		<p>loading ..</p>
-	</div>			
-	)
-}
+export class App extends React.Component {
+	constructor(props){
+		super(props);
 
-export default App;
+		this.state = {
+			buyItems: ['milk', 'bread', 'fruit']
+		}
+	}
+
+	render(){
+		const {buyItems} = this.state;
+		return (
+			<div>
+				<h1>Shopping list</h1>
+				{
+					buyItems.map(item => {
+						return <p key={item}>{item}</p>
+					})
+				}
+			</div>
+		)
+	}
+}
